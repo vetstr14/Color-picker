@@ -1,0 +1,145 @@
+:root {
+    --primary: #ffffff;
+    --p-Dark: #cccccc;
+    --p-Light: #ffffff;
+    --p-Text: #000000;
+
+    --secundary: #606060;
+    --s-Dark: #363636;
+    --s-Light: #8d8d8d;
+    --s-Text: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto Mono",monospace;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+#innhold {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+main {
+    width: 100vw;
+    height: calc(100vh - 60px);
+}
+
+main div#container {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    transition: all 0.6s ease;
+}
+main .site-devider {
+    width: 100vw;
+    height: calc(100vh - 60px);
+}
+main div.headLine {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    border-bottom: 1px solid var(--p-Dark);
+}
+main div.headLine img {
+    width: 40px;
+}
+main div.headLine h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 100;
+    padding: 0 24px;
+    text-transform: uppercase;
+    color: var(--s-Dark);
+}
+main div.site-content {
+    width: 100vw;
+    height: calc(100vh - 60px - 62px);
+    display: flex;
+}
+main div.content-devider_Left {
+    height: 100%;
+    position: relative;
+}
+main div.content-devider_Left::before {
+    position: absolute;
+    content: "";
+    right: 0;
+    height: 80%;
+    width: 2px;
+    border-radius: 2px;
+    background: var(--p-Dark);
+}
+main div.content-devider_Right {
+    height: 100%;
+}
+.t-to-b {
+    flex-direction: column;
+}
+main div.gradient-display p.midlertidig {
+    text-align: center;
+    color: var(--secundary);
+}
+main div.gradient-display p.midlertidig::after {
+    content: " ...";
+}
+main div.content-devider_Top {
+    height: 50%;
+    width: 100%;
+    position: relative;
+}
+main div.content-devider_Top::before {
+    position: absolute;
+    content: "";
+    width: 70%;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--p-Dark);
+    bottom: 0;
+    left: 15%;
+}
+main div.content-devider_Bottom {
+    height: 50%;
+    width: 100%;
+}
+
+nav {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 10px 30px 0 var(--p-Dark);
+}
+nav div.navContent {
+    width: 600px;
+    min-width: 600px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+nav div.navContent div#aktive-site {
+    width: 50px;
+    height: 50px;
+    background: var(--s-Light);
+    opacity: 0.3;
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    border-radius: 50%;
+    transition: all 0.3s;
+    z-index: -1;
+    box-shadow: 0 0 3px 0 var(--s-Dark);
+}
+nav div.icon-box {
+    width: 30px;
+    height: 30px;
+}
+nav div.icon-box img {
+    width: 30px;
+    cursor: pointer;
+}

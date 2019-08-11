@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>Color Picker</title>
+        <!--Css-->
+        <link rel="stylesheet" href="app/css/index.css">
+        <link rel="stylesheet" href="app/css/color-Tool.css">
+        <link rel="stylesheet" href="app/css/gradient-color.css">
+        <link rel="stylesheet" href="app/css/bruker-grense.css">
+        <!--Javascript-->
+        <script src="app/javascript/colorPicker.js"></script>
+    </head>
+    <body onload="colorPickerStartUp()">
+        <div id="innhold">
+            <main>
+                <div id="container">
+                    <div class="site-devider">
+                        <div class="headLine">
+                            <img src="app/icons/twotone-palette-24px.svg">
+                            <h1>Color Tool</h1>
+                        </div>
+                        <div class="site-content">
+                            <div class="content-devider_Left colorPicker-center">
+                                <div class="colorPicker-container">
+                                    <div id="colorPicker"></div>
+                                </div>
+                            </div>
+                            <div class="content-devider_Right colorPicker-Tools">
+                                <div class="gradient-container">
+                                    <div id="gradient-picker"></div>
+                                </div>
+                                <div class="tool-container">
+                                    <div class="inp-container">
+                                        <div>
+                                            <label for="color-input">#</label>
+                                            <input id="color-input" type="text" placeholder="ffffff" maxlength="6" spellcheck="false">
+                                        </div>
+                                    </div>
+                                    <div class="color-valg">
+                                        <div id="primary" class="color-valg_boxer active-color-valg_box">
+                                            <p>Primary</p>
+                                            <p class="color-disp">#FFFFFF</p>
+                                        </div>
+                                        <div id="secundary" class="color-valg_boxer notActive-color-valg_box">
+                                            <p>Secundary</p>
+                                            <p class="color-disp"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-devider">
+                        <div class="headLine">
+                            <img src="app/icons/twotone-palette-24px.svg">
+                            <h1>Color Gradient</h1>
+                        </div>
+                        <div class="site-content t-to-b">
+                            <div class="content-devider_Top gradient-display">
+                                <p class="midlertidig">Velg en primary farge</p>
+                            </div>
+                            <div class="content-devider_Bottom gradient-display">
+                                <p class="midlertidig">Velg en secundary farge</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-devider">
+                        <div class="headLine">
+                            <img src="app/icons/twotone-palette-24px.svg">
+                            <h1>Bruker Grense</h1>
+                        </div>
+                        <div class="site-content">
+                            <div class="bruker-grense_container">
+                                <div class="eksWeb-sideBytte">
+                                    <img class="eksWebSite-sideBytteKnapp" go="left" src="app/icons/round-keyboard_arrow_left-24px.svg">
+                                    <p class="disp-sideNr"><b id="eksWeb-sideNr">1</b>/6</p>
+                                    <img class="eksWebSite-sideBytteKnapp" go="right" src="app/icons/round-keyboard_arrow_right-24px.svg">
+                                </div>
+                                <div class="eksWebsite-container">
+                                    <div id="eksWebsite-slidingContainer">
+                                        <div class="eksWebsite-site">
+                                            <!--Legg til classer for primery, secundary osv... og legg til flere eksempel sider-->
+                                            <div class="head">
+                                                Text
+                                            </div>
+                                            <div class="main">
+                                                dd
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-devider">
+                        <div class="headLine">
+                            <img src="app/icons/twotone-palette-24px.svg">
+                            <h1>Text Utseende</h1>
+                        </div>
+                        <div class="site-content">
+
+                        </div>
+                    </div>
+                    <div class="site-devider">
+                        <div class="headLine">
+                            <img src="app/icons/twotone-palette-24px.svg">
+                            <h1>Copier Code</h1>
+                        </div>
+                        <div class="site-content">
+
+                        </div>
+                    </div>
+                    <div class="site-devider">
+                        <div class="headLine">
+                            <img src="app/icons/twotone-palette-24px.svg">
+                            <h1>Dine Favoriter</h1>
+                        </div>
+                        <div class="site-content">
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <nav>
+                <div class="navContent">
+                    <div class="icon-box" side="0"><img src="app/icons/twotone-color_lens-24px.svg"></div>
+                    <div class="icon-box" side="1"><img src="app/icons/twotone-invert_colors-24px.svg"></div>
+                    <div class="icon-box" side="2"><img src="app/icons/twotone-pageview-24px.svg"></div>
+                    <div class="icon-box" side="3"><img src="app/icons/round-format_color_text-24px.svg"></div>
+                    <div class="icon-box" side="4"><img src="app/icons/twotone-file_copy-24px.svg"></div>
+                    <div class="icon-box" side="5"><img src="app/icons/twotone-account_circle-24px.svg"></div>
+                    <div id="aktive-site"></div>
+                </div>
+            </nav>
+        </div>
+        <script src="app/javascript/index.js"></script>
+        <script src="app/javascript/sideBytte.js"></script>
+        <script src="app/javascript/convertColors.js"></script>
+    </body>
+</html>

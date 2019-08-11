@@ -1,0 +1,37 @@
+:root {
+    --primary: #ffffff;
+    --p-Dark: #cccccc;
+    --p-Light: #ffffff;
+    --p-Text: #000000;
+
+    --secundary: #606060;
+    --s-Dark: #363636;
+    --s-Light: #8d8d8d;
+    --s-Text: #ffffff;
+}
+
+.gradient-display{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.gradient-display .gradient-display_box {
+    width: 300px;
+    height: 250px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    opacity: 0;
+    border: 1px solid var(--p-Dark);
+}
+.gradient-display .gradient-display_box h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.gradient-display .gradient-display_box p {
+    margin-top: 0;
+}
+
+@keyframes fadeInGradientBox {
+    0% {opacity: 0;transform: translateY(-25px);}
+    100% {opacity: 1;transform: translateY(0);}
+}

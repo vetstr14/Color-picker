@@ -1,0 +1,171 @@
+:root {
+    --primary: #ffffff;
+    --p-Dark: #cccccc;
+    --p-Light: #ffffff;
+    --p-Text: #000000;
+
+    --secundary: #606060;
+    --s-Dark: #363636;
+    --s-Light: #8d8d8d;
+    --s-Text: #ffffff;
+}
+ 
+ .colorPicker-container {
+    width: 524px;
+    height: 528.5px;
+    border: solid white 1px;
+    padding: 5px;
+ }
+ .colorPicker-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    min-width: 530px;
+ }
+ #colorPicker {
+    width: 512px;
+    height: 516.5px;
+    border: solid black 1px;
+    display: flex;
+    box-shadow: 30px 16px 36px 0 var(--p-Dark);
+}
+#colorPicker .pixel {
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.colorPicker-Tools {
+    display: flex;
+    width: 45%;
+}
+.colorPicker-Tools .gradient-container {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.colorPicker-Tools .gradient-container #gradient-picker {
+    width: 52px;
+    height: 322px;
+    border: solid 1px var(--s-Light);
+    border-radius: 25px;
+    transition: box-shadow ease-in-out .2s;
+    overflow: hidden;
+}
+.colorPicker-Tools .gradient-container #gradient-picker:hover {
+    box-shadow: 12px 15px 30px 0 rgb(230, 230, 230);
+}
+.colorPicker-Tools .gradient-container #gradient-picker .gradient-pixel {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    border: none;
+    opacity: 0;
+    transition: all .2s;
+}
+.colorPicker-Tools .tool-container {
+    width: 70%;
+    min-width: 275px;
+    height: 100%;
+}
+.colorPicker-Tools .tool-container .inp-container {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.colorPicker-Tools .tool-container .inp-container div {
+    width: 200px;
+    position: relative;
+}
+.colorPicker-Tools .tool-container .inp-container div input {
+    width: 100px;
+    outline: none;
+    font-size: 20px;
+    padding: 10px 0 5px 25px;
+    border: none;
+    border-bottom: 2px solid var(--p-Dark);
+    transition: all .2s;
+    color: var(--secundary);
+} 
+.colorPicker-Tools .tool-container .inp-container div label {
+    position: absolute;
+    top: 8px; 
+    left: 5px;
+    font-size: 25px;
+    color: var(--s-Light);
+} 
+.colorPicker-Tools .tool-container .inp-container div label::placeholder {
+    color: var(--s-Light);
+} 
+.colorPicker-Tools .tool-container .inp-container div input:focus {
+    border-color:  var(--secundary);
+} 
+.colorPicker-Tools .tool-container .color-valg {
+    width: 100%;
+    height: calc(100% - 75px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.colorPicker-Tools .tool-container .color-valg .color-valg_boxer {
+    width: 275px;
+    height: 185px;
+    border: 1px solid var(--p-Dark);
+    transition: all .5s;
+    cursor: pointer;
+}
+.colorPicker-Tools .tool-container .color-valg .color-valg_boxer:hover {
+    box-shadow: 7px 5px 15px 0 rgb(205, 205, 205);
+}
+.colorPicker-Tools .tool-container .color-valg .color-valg_boxer p {
+    padding: 10px 0 0 10px;
+    margin: 10px 0 5px 0;
+    font-weight: 600;
+}
+.colorPicker-Tools .tool-container .color-valg .color-valg_boxer p.color-disp {
+    padding: 0 20px !important;
+    margin: 0 !important;
+    font-size: 14px;
+    font-weight: 100 !important;
+}
+.active-color-valg_box {
+    box-shadow: 7px 5px 15px 0 rgb(190, 190, 190) !important;
+    transition: all .5s;
+}
+.notActive-color-valg_box {
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+}
+
+.colorPicked::before {
+    content: "";
+    position: absolute;
+    border: 2px solid var(--secundary);
+    top: -4px;
+    left: -4px;
+    width: 8px; 
+    height: 8px; 
+    z-index: 2;
+    border-radius: 50%;
+    animation: scaleIn .2s;
+    pointer-events: none;
+}
+@keyframes scaleIn {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+.activFarge {
+    height: 20px !important;
+}
+
+@keyframes fadeInPixels {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
